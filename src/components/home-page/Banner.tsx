@@ -4,7 +4,7 @@ import bannerImage from "@/assets/hero_img.jpg";
 
 const Banner = () => {
   return (
-    <section className="my-6 px-4 sm:px-6 lg:px-8">
+    <section className="container mx-auto my-6 px-4 sm:px-6 lg:px-8">
       {" "}
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 overflow-hidden rounded-2xl bg-gradient-to-r from-[#dbeafe] via-[#ede9fe] to-[#fce7f3] px-6 py-10 sm:px-10 md:grid-cols-2 md:py-12 lg:px-16 lg:py-14">
         {" "}
