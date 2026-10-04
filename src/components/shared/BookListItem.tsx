@@ -1,5 +1,6 @@
 import { IBook } from "@/types/books.types";
 import Image from "next/image";
+import Link from "next/link";
 
 interface BookListItemProps {
   book: IBook;
@@ -42,13 +43,15 @@ const BookListItem = ({ book }: BookListItemProps) => {
         </div>
 
         <div className="mt-4 flex items-center justify-between">
-          <p className="text-lg font-bold text-primary">
-            ${`none`}
-          </p>
+          <button className="btn btn-accent btn-sm">
+              Save
+            </button>
 
-          <button className="btn btn-primary btn-sm">
-            View Details
-          </button>
+          <Link href={`/books/${book.bookId}`}>
+            <button className="btn btn-primary btn-sm">
+              View Details
+            </button>
+          </Link>
         </div>
       </div>
     </div>

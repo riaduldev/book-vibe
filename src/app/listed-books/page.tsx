@@ -1,6 +1,6 @@
 "use client";
 
-import BookListItem from "@/components/bookDetails/BookListItem";
+import BookListItem from "@/components/shared/BookListItem";
 import BookCard from "@/components/shared/BookCard";
 import { BookContext } from "@/context/BookContext";
 import { IBook } from "@/types/books.types";
@@ -9,8 +9,8 @@ import React, { useContext } from "react";
 const ListedBooksPage = () => {
   const { readBooks, wishlist } = useContext(BookContext);
 
-  console.log(readBooks, "readBook");
-  console.log(wishlist, "wishlist");
+//   console.log(readBooks, "readBook");
+//   console.log(wishlist, "wishlist");
 
   return (
     <div className="container mx-auto my-4">
