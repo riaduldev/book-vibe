@@ -17,7 +17,9 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <nav className="bg-base-100 shadow-sm">
+
+    <div className="navbar container mx-auto">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -28,20 +30,20 @@ const Navbar = () => {
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
-            >
+              >
               {" "}
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
                 d="M4 6h16M4 12h8m-8 6h16"
-              />{" "}
+                />{" "}
             </svg>
           </div>
           <ul
             tabIndex={-1}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
-          >
+            >
             {links}
           </ul>
         </div>
@@ -57,19 +59,20 @@ const Navbar = () => {
         <button
           type="button"
           className="rounded-full border border-purple-500 px-5 py-2 font-semibold text-purple-600 transition-all duration-300 hover:bg-purple-50 hover:shadow-md active:scale-95"
-        >
+          >
           {" "}
           Sign In{" "}
         </button>{" "}
         <button
           type="button"
           className="rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 px-5 py-2 font-semibold text-white shadow-md transition-all duration-300 hover:scale-105 hover:from-purple-700 hover:to-indigo-700 hover:shadow-lg active:scale-95"
-        >
+          >
           {" "}
           Sign Up{" "}
         </button>{" "}
       </div>
     </div>
+          </nav>
   );
 };
 
