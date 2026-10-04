@@ -1,11 +1,18 @@
-import React from 'react';
+"use client";
 
-const page = () => {
-    return (
-        <div>
-            <h1>Listed Books</h1>
-        </div>
-    );
+import { BookContext } from "@/context/BookContext";
+import React, { useContext } from "react";
+
+const ListedBooks = () => {
+  const { readBooks } = useContext(BookContext);
+
+  console.log(readBooks, "readBook");
+
+  return (
+    <div>
+      <h1>Listed Books</h1>
+    </div>
+  );
 };
 
-export default page;
+export default ListedBooks;
