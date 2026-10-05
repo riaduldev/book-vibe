@@ -32,7 +32,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <BooksProvider>
           <Navbar></Navbar>
           {children}
-          <h1 className="text-2xl font-bold bg-yellow-500">Footer</h1>
+
           <ToastContainer />
           <Footer></Footer>
         </BooksProvider>
