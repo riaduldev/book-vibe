@@ -12,9 +12,9 @@ interface BookDetailsPageProps {
 const getBooks = async () => {
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`);
-  const data = await res.json();
-  return data;
-  }catch (error) {
+    const data = await res.json();
+    return data;
+  } catch (error) {
     console.error("Error fetching books data:", error);
     return [];
   }
@@ -22,8 +22,9 @@ const getBooks = async () => {
 const BookDetailsPage = async ({ params }: BookDetailsPageProps) => {
   const { id } = await params;
   const booksData = await getBooks();
+  // console.log(booksData, 'bookdata');
   const book = booksData.find(
-    (book: IBook) => book.bookId === Number(id),
+    (book: IBook) => Number(book.bookId) === Number(id),
   ) as IBook;
   // console.log(book);
   return (
@@ -32,14 +33,22 @@ const BookDetailsPage = async ({ params }: BookDetailsPageProps) => {
 
   {/* ================= BOOK IMAGE ================= */}
   <figure className="lg:w-1/2 bg-base-200 p-8 flex items-center justify-center">
+  {book ? (
     <Image
       src={book.image}
       alt={book.bookName}
       width={500}
       height={600}
-      className="w-full h-[320px] lg:h-[430px] object-contain drop-shadow-lg"
+      className="lg:h-[430px] object-contain drop-shadow-lg"
     />
-  </figure>
+  ) : (
+    <div className="flex h-[430px] items-center justify-center">
+      <p className="text-lg font-semibold text-gray-500">
+        Book image not found
+      </p>
+    </div>
+  )}
+</figure>
 
   {/* ================= BOOK DETAILS ================= */}
   <div className="lg:w-1/2 p-5 lg:p-7">

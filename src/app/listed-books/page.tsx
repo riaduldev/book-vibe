@@ -1,7 +1,6 @@
 "use client";
 
 import BookListItem from "@/components/shared/BookListItem";
-import BookCard from "@/components/shared/BookCard";
 import { BookContext } from "@/context/BookContext";
 import { IBook } from "@/types/books.types";
 import React, { useContext, useState } from "react";
